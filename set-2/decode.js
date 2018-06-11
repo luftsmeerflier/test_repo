@@ -3,23 +3,19 @@ const decode = function(encoded){
 	let answer = [];
 	array.forEach(function(word){
 		let letter = word[0];
-		switch(true){
-			case (letter === 'a'): {
+		switch(letter){
+			case 'a':
 				answer.push(word[1]);
 				break;
-			}
-			case (letter === 'b'): {
+			case 'b': 
 				answer.push(word[2]);
 				break;
-			}
-			case (letter === 'c'): {
+			case 'c': 
 				answer.push(word[3]);
 				break;
-			}
-			case (letter === 'd'): {
+			case 'd': 
 				answer.push(word[4]);
 				break;
-			}
 			default: 
 				answer.push(' ');
 		}
