@@ -1,6 +1,5 @@
 function rockPaperScissors(userInput){
 
-
 	let moves = ["Rock", "Paper", "Scissors"];
 
 	const randomNo = Math.floor(Math.random() * 3);
@@ -11,32 +10,25 @@ function rockPaperScissors(userInput){
 
 	let winner = '';
 
-
-
-
-
-
-	
 	if(userInput <= 0 || userInput > 3) throw new Error("Input 1, 2, 3 to choose Rock, Paper, or Scissors, respectively.");
-	} catch(e) {
-		console.error(e.message);
+	
+	if(userMove === 'Rock' && computerMove === 'Scissors'){
+		winner = "user";
+	} else if (userMove === 'Paper' && computerMove === 'Rock'){
+		winner = "user";
+	} else if (userMove === 'Scissors' && computerMove === 'Paper'){
+		winner = "user";
+	} else if (userMove === computerMove) {
+		winner = "nobody, it's a tie!";
+	} else {
+		winner = "computer"; 
 	}
-
-			if(userMove === 'Rock' && computerMove === 'Scissors'){
-			winner = "user";
-		} else if (userMove === 'Paper' && computerMove === 'Rock'){
-			winner = "user";
-		} else if (userMove === 'Scissors' && computerMove === 'Paper'){
-			winner = "user";
-		} else {
-			winner = "computer"; 
-		}
-
-
-
 
 	return (`User chose ${userMove}. Computer chose ${computerMove}. The winner is: ${winner}!`);
 
 }
-
-console.log(rockPaperScissors(9));
+try {
+	console.log(rockPaperScissors(1));
+} catch(e) {
+	console.error(e.message);
+}
